@@ -10,14 +10,7 @@ function matrixGenerator(rows, columns) {
 
   matrix.forEach(row => row.sort((a, b) => a - b));
 
-  for (let i = 1; i < matrix.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (matrix[i][0] < matrix[j][0]) {
-        const temp = matrix.splice(i, 1);
-        matrix.splice(j, 0, temp[0]);
-      }
-    }
-  }
+  matrix.sort((a, b) => a[0] - b[0]);
   return matrix;
 }
 
